@@ -186,10 +186,7 @@ canvas {
     left: 10%;
 }
 
-#page1>#right-text>h3,
-#page1>#left-text>h3,
-#page2>#text1>h3,
-#page3>#text3>h3 {
+#page1>#right-text>h3 {
     font-weight: 400;
     color: #7c7c7c;
 }
