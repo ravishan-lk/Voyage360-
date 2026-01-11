@@ -3,7 +3,7 @@ function locomotive() {
 
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
-    smooth: true ,
+    smooth: true,
   });
   locoScroll.on("scroll", ScrollTrigger.update);
 
@@ -416,30 +416,36 @@ ScrollTrigger.create({
 
 
 
-gsap.to("#page1",{
-  scrollTrigger:{
-    trigger:`#page1`,
-    start:`top top`,
-    end:`bottom top`,
-    pin:true,
-    scroller:`#main`
+gsap.to("#page1", {
+  scrollTrigger: {
+    trigger: `#page1`,
+    start: `top top`,
+    end: `bottom top`,
+    pin: true,
+    scroller: `#main`
   }
 })
-gsap.to("#page2",{
-  scrollTrigger:{
-    trigger:`#page2`,
-    start:`top top`,
-    end:`bottom top`,
-    pin:true,
-    scroller:`#main`
+gsap.to("#page2", {
+  scrollTrigger: {
+    trigger: `#page2`,
+    start: `top top`,
+    end: `bottom top`,
+    pin: true,
+    scroller: `#main`
   }
 })
-gsap.to("#page3",{
-  scrollTrigger:{
-    trigger:`#page3`,
-    start:`top top`,
-    end:`bottom top`,
-    pin:true,
-    scroller:`#main`
+gsap.to("#page3", {
+  scrollTrigger: {
+    trigger: `#page3`,
+    start: `top top`,
+    end: `bottom top`,
+    pin: true,
+    scroller: `#main`
   }
 })
+
+var spotlight = document.querySelector('#spotlight');
+document.addEventListener('mousemove', function (e) {
+  spotlight.style.setProperty('--x', e.clientX + 'px');
+  spotlight.style.setProperty('--y', e.clientY + 'px');
+});
