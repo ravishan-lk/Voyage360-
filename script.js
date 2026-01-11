@@ -103,7 +103,7 @@ gsap.to(imageSeq, {
 images[1].onload = render;
 
 function render() {
-  scaleImage(images[imageSeq.frame], context);
+  scaleImage(images[Math.floor(imageSeq.frame)], context);
 }
 
 function scaleImage(img, ctx) {
