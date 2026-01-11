@@ -4,6 +4,11 @@
     box-sizing: border-box;
     font-family: gilroy;
     color: #fff;
+}
+
+h1,
+h3,
+h4 {
     text-shadow: 1px 1px 0 #999, 2px 2px 0 #777, 3px 3px 0 #555, 4px 4px 0 #333;
 }
 
