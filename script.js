@@ -5,7 +5,16 @@ function locomotive() {
     el: document.querySelector("#main"),
     smooth: true,
   });
-  locoScroll.on("scroll", ScrollTrigger.update);
+
+  locoScroll.on("scroll", (instance) => {
+    ScrollTrigger.update();
+    const nav = document.querySelector("#nav");
+    if (instance.scroll.y > 50) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  });
 
   ScrollTrigger.scrollerProxy("#main", {
     scrollTop(value) {
