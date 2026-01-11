@@ -385,3 +385,83 @@ canvas {
         }
     }
 }
+
+@media (max-height: 500px) and (orientation: landscape) {
+    #nav {
+        height: 15%;
+        padding: 0px 20px;
+    }
+
+    #nav>h3 {
+        font-size: 18px;
+    }
+
+    #nav>button {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    #loop {
+        top: 15%;
+        height: 20%;
+        font-size: 50px;
+    }
+
+    #page>h3 {
+        top: 60%;
+        font-size: 14px;
+        left: 5%;
+    }
+
+    #page>h4 {
+        top: 75%;
+        font-size: 12px;
+        left: 5%;
+    }
+
+    #page1>#right-text {
+        top: 10%;
+        left: 5%;
+    }
+
+    #page1>#right-text>h1 {
+        font-size: 30px;
+    }
+
+    #page1>#left-text {
+        top: 50%;
+        right: 5%;
+    }
+
+    #page1>#left-text>h1 {
+        font-size: 30px;
+    }
+
+    #page2>#text1 {
+        top: 10%;
+        left: 5%;
+    }
+
+    #page2>#text1>h1 {
+        font-size: 30px;
+    }
+
+    #page2>#text2 {
+        top: 50%;
+        right: 5%;
+        width: 80%;
+    }
+
+    #page2>#text2>p {
+        font-size: 14px;
+    }
+
+    #page3>#text3 {
+        top: 20%;
+        right: 5%;
+    }
+
+    #page3>#text3>h1 {
+        font-size: 40px;
+    }
+}
