@@ -1,0 +1,374 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: gilroy;
+    color: #fff;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+#page {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0f172a;
+    background-image: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.15) 0%, transparent 70%);
+}
+
+#page1 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0f172a;
+    background-image: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.15) 0%, transparent 70%);
+}
+
+#page2 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0f172a;
+    background-image: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.15) 0%, transparent 70%);
+}
+
+#page3 {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0f172a;
+    background-image: radial-gradient(circle at 50% 50%, rgba(29, 78, 216, 0.15) 0%, transparent 70%);
+}
+
+#page::before,
+#page1::before,
+#page2::before,
+#page3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('111.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+}
+
+canvas {
+    position: relative;
+    z-index: 9;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+#loop {
+    display: flex;
+    position: absolute;
+    top: 30%;
+    height: 25%;
+    width: 100%;
+    font-size: 100px;
+    white-space: nowrap;
+    font-family: gilroy;
+}
+
+#loop>h1 {
+    font-weight: 400;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#loop>h1>span {
+    -webkit-text-stroke: 1.2px #fff;
+    color: transparent;
+    font-weight: 500;
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7%;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    padding: 0px 30px;
+}
+
+#nav>img {
+    height: 60%;
+    cursor: pointer;
+}
+
+#nav>button {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+#page>h3 {
+    position: absolute;
+    top: 55%;
+    font-family: gilroy;
+    font-weight: 400;
+    color: #fff;
+    left: 5%;
+}
+
+#page>h4 {
+    position: absolute;
+    top: 62%;
+    left: 25%;
+    font-family: gilroy;
+    font-weight: 500;
+}
+
+#page1>#right-text {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+#page1>#right-text>h3 {
+    font-weight: 400;
+    color: #7c7c7c;
+}
+
+#page1>#right-text>h1 {
+    line-height: 1.5;
+    font-size: 50px;
+}
+
+#page1>#left-text {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    text-align: end;
+}
+
+#page1>#left-text>h1 {
+    font-size: 50px;
+    line-height: 1.5;
+}
+
+#page1>#left-text>h3 {
+    color: #fff;
+    font-weight: 400;
+}
+
+#page2>#text1 {
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+
+#page2>#text1>h3 {
+    color: #fff;
+    font-weight: 400;
+}
+
+#page2>#text1>h1 {
+    font-size: 60px;
+    line-height: 1.5;
+}
+
+#page2>#text2 {
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    text-align: end;
+}
+
+#page2>#text2>p {
+    color: #fff;
+    font-weight: 400;
+}
+
+#page3>#text3 {
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    text-align: end;
+}
+
+#page3>#text3>h3 {
+    color: #fff;
+    font-weight: 400;
+}
+
+#page3>#text3>h1 {
+    font-size: 70px;
+
+}
+
+#rotate-device {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #nav {
+        padding: 0px 10px;
+    }
+
+    #nav>h3 {
+        font-size: 16px;
+    }
+
+    #nav>button {
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    #loop {
+        top: 20%;
+        height: 15%;
+        font-size: 40px;
+    }
+
+    #page>h3 {
+        top: 52%;
+        font-size: 14px;
+        left: 5%;
+        width: 90%;
+    }
+
+    #page>h4 {
+        top: 65%;
+        font-size: 12px;
+        left: 5%;
+    }
+
+    #page1>#right-text {
+        top: 15%;
+        left: 5%;
+    }
+
+    #page1>#right-text>h1 {
+        font-size: 30px;
+    }
+
+    #page1>#left-text {
+        top: 60%;
+        right: 5%;
+        text-align: right;
+    }
+
+    #page1>#left-text>h1 {
+        font-size: 30px;
+    }
+
+    #page2>#text1 {
+        top: 15%;
+        left: 5%;
+    }
+
+    #page2>#text1>h1 {
+        font-size: 30px;
+    }
+
+    #page2>#text2 {
+        top: 50%;
+        right: 5%;
+        left: auto;
+        width: 90%;
+        text-align: right;
+    }
+
+    #page2>#text2>p {
+        font-size: 14px;
+    }
+
+    #page3>#text3 {
+        top: 30%;
+        right: 5%;
+    }
+
+    #page3>#text3>h1 {
+        font-size: 40px;
+    }
+
+    #rotate-device {
+        display: none;
+    }
+
+    @media (max-width: 600px) and (orientation: portrait) {
+        #rotate-device {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: #111;
+            z-index: 9999;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #rotate-device>#phone {
+            height: 80px;
+            width: 40px;
+            border: 3px solid #fff;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            animation: rotate 2s infinite ease-in-out alternate;
+        }
+
+        #rotate-device>h3 {
+            font-family: gilroy;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        /* Hide main content when overlay is active to avoid scrolling */
+        #main,
+        #nav {
+            display: none;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(90deg);
+            }
+
+            100% {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
