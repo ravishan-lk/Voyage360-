@@ -55,34 +55,17 @@ window.addEventListener("resize", function () {
   render();
 });
 
-function files(index) {
-  // Maintaining original behavior: index 0 is skipped/empty in the loop context if it relies on 1-based indexing from the split
-  // However, the loop goes from 0 to 299.
-  // Original split produced empty string at index 0. 
-  // index 1 -> male0001.
-  if (index === 0) return "";
-
-  // Dynamic generation for male0001 to male0300
-  // index 1 -> 0001
-  // index 299 -> 0299
-  // Wait, the original code loop was i < 300.
-  // So it loaded images[1]...images[299]. 
-  // It missed male0300.png?
-  // I will make it robust.
-
-  var number = index.toString().padStart(4, '0');
-  return `./male${number}.webp`;
-}
 const frameCount = 300;
 
 const images = [];
 const imageSeq = {
-  frame: 1,
+  frame: 0,
 };
 
-for (let i = 0; i < frameCount; i++) {
+for (let i = 1; i <= frameCount; i++) {
   const img = new Image();
-  img.src = files(i);
+  const number = i.toString().padStart(4, '0');
+  img.src = `./male${number}.webp`;
   images.push(img);
 }
 
@@ -94,16 +77,19 @@ gsap.to(imageSeq, {
     scrub: 0.15,
     trigger: `#page > canvas`,
     start: `top top`,
-    end: `600 % top`,
+    end: `600% top`,
     scroller: `#main`,
   },
   onUpdate: render,
 });
 
-images[1].onload = render;
+images[0].onload = render;
 
 function render() {
-  scaleImage(images[Math.floor(imageSeq.frame)], context);
+  const index = Math.floor(imageSeq.frame);
+  if (images[index]) {
+    scaleImage(images[index], context);
+  }
 }
 
 function scaleImage(img, ctx) {
